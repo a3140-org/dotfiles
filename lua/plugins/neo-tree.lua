@@ -15,6 +15,9 @@ return {
         -- "buffers",
         -- "git_status",
       },
+      window = {
+        position = "right",
+      },
       source_selector = {
         winbar = false,
         sources = {

@@ -42,7 +42,7 @@ return {
               includeInlayFunctionLikeReturnTypeHints = true,
               includeInlayEnumMemberValueHints = true,
               includeCompletionsForModuleExports = true,
-              quotePreference = "auto",
+              quotePreference = "double",
             },
             tsserver_format_options = {
               allowIncompleteCompletions = false,

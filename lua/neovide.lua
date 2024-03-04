@@ -7,13 +7,13 @@ function M.init()
 end
 
 function M.config()
-  vim.o.guifont = "JetBrainsMono Nerd Font Mono:h16"
+  vim.o.guifont = "JetBrainsMono Nerd Font Mono:h18"
   -- 没有空闲
   vim.g.neovide_no_idle = true
   -- 退出需要确认
   vim.g.neovide_confirm_quit = true
   -- 是否全屏
-  vim.g.neovide_fullscreen = false
+  vim.g.neovide_fullscreen = true
   -- 记住以前窗口的大小
   vim.g.neovide_remember_window_size = true
   -- 使用super键位,比如<cmd>

@@ -288,7 +288,7 @@ function M.mappings(maps)
     if vim.fn.executable "lazydocker" == 1 then
       maps.n["<Leader>td"] = {
         require("utils").toggle_lazy_docker(),
-        desc = "ToggleTerm lazydocker"
+        desc = "ToggleTerm lazydocker",
       }
     end
   end
