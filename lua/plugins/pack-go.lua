@@ -16,6 +16,33 @@ return {
     opts = {
       config = {
         gopls = {
+          capabilities = {
+            workspace = {
+              didChangeWatchedFiles = { dynamicRegistration = true },
+            },
+            textDocument = {
+              completion = {
+                completionItem = {
+                  commitCharactersSupport = true,
+                  deprecatedSupport = true,
+                  documentationFormat = { "markdown", "plaintext" },
+                  preselectSupport = true,
+                  insertReplaceSupport = true,
+                  labelDetailsSupport = true,
+                  snippetSupport = true,
+                  resolveSupport = {
+                    properties = {
+                      "documentation",
+                      "details",
+                      "additionalTextEdits",
+                    },
+                  },
+                },
+                contextSupport = true,
+                dynamicRegistration = true,
+              },
+            },
+          },
           on_attach = function(client, _)
             if client.name == "gopls" then
               if not client.server_capabilities.semanticTokensProvider then
@@ -31,11 +58,6 @@ return {
               end
             end
           end,
-          capabilities = {
-            workspace = {
-              didChangeWatchedFiles = { dynamicRegistration = true },
-            },
-          },
           settings = {
             gopls = {
               gofumpt = true,
@@ -161,27 +183,35 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     opts = {
-      disable_defaults = true,
-      -- lsp_inlay_hints = {
-      --   enable = false,
-      -- },
-      -- diagnostic = { -- set diagnostic to false to disable vim.diagnostic setup
-      --   hdlr = true, -- hook lsp diag handler and send diag to quickfix
-      --   underline = true,
-      --   virtual_text = {
-      --     spacing = 5,
-      --     severity_limit = "ERROR",
-      --     severity = {
-      --       min = vim.diagnostic.severity.ERROR,
-      --     },
-      --   },
-      --   signs = {
-      --     severity = {
-      --       min = vim.diagnostic.severity.ERROR,
-      --     },
-      --   },
-      --   update_in_insert = false,
-      -- },
+      -- disable_defaults = true,
+      lsp_inlay_hints = {
+        enable = false,
+      },
+      trouble = true,
+      run_in_floaterm = true,
+      luasnip = true,
+      capabilities = {
+        workspace = {
+          didChangeWatchedFiles = { dynamicRegistration = true },
+        },
+      },
+      diagnostic = { -- set diagnostic to false to disable vim.diagnostic setup
+        hdlr = true, -- hook lsp diag handler and send diag to quickfix
+        underline = true,
+        virtual_text = {
+          spacing = 5,
+          severity_limit = "ERROR",
+          severity = {
+            min = vim.diagnostic.severity.ERROR,
+          },
+        },
+        signs = {
+          severity = {
+            min = vim.diagnostic.severity.ERROR,
+          },
+        },
+        update_in_insert = false,
+      },
     },
     event = { "CmdlineEnter" },
     ft = { "go", "gomod" },

@@ -1,6 +1,6 @@
 # AstroNvim Template
 
-**NOTE:** This is for AstroNvim v4+
+**NOTE:** This is the latest v4 configuration; everyone can use it with confidence.
 
 hello guys!
 in my workflow,I use `wezterm` as my terminal, and I also use `tmux` to provide me with multiple terminal windows, `yazi` as terminal file manager. btw this config support neovide and don't need other configs.
@@ -10,14 +10,13 @@ neovim >= `0.9`, recommend `0.9`
 
 ### Features
 
-now,this config supports development in `TypeScript`,`Rust`,`Python`,`Go`,`vue` and `markdown`.
+now,this config supports development in `TypeScript`,`Python`,`Go`, `Rust` and `markdown`.
 
 - ***`Typescript`***: `typescript-tools.nvim`
-- ***`Rust`***: `mrcjkb/rustaceanvim`
 - ***`Python`***: `pylance`
 - ***`Go`***: `go.nvim` *-- support go zero framework* 
-- ***`Vue`***: `volar` *-- base on `typescript-tools.nvim` and `typescript-vue-plugin`* 
 - ***`Markdown`***: `iamcco/markdown-preview.nvim`,
+- ***`Rust`***: `mrcjkb/rustaceanvim`
 
 
 ### workflow screenshot
@@ -121,30 +120,18 @@ brew tap daipeihust/tap
 brew install im-select
 im-select
 ```
-copy result to `im-select.lua`
+run `im-select` & copy result to `im-select.lua`
 
 ```lua
-return {
-  "chaozwn/im-select.nvim",
-  lazy = false,
-  opts = {
-    -- modify 'im.rime.inputmethod.Squirrel.Hans' to your own input method
-    default_main_select = "im.rime.inputmethod.Squirrel.Hans",
-    set_previous_events = { "InsertEnter", "FocusLost" },
-  },
-}
+-- update your self input method here
+Mac.zhCN = "im.rime.inputmethod.Squirrel.Hans" -- there
+Mac.en =  "com.apple.keylayout.ABC"
 ```
 
 ### Support styled-components
 
 ```shell
 npm i -g @styled/typescript-styled-plugin typescript-styled-plugin
-```
-
-### Support for vue development
-```shell
-npm i -g @vue/typescript-plugin
-npm i -g vue-component-meta
 ```
 
 ### Support for neovide

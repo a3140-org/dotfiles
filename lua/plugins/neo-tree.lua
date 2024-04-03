@@ -5,6 +5,7 @@ local get_icon = require("astroui").get_icon
 return {
   "nvim-neo-tree/neo-tree.nvim",
   -- dependencies = { "miversen33/netman.nvim" },
+  commit = "5568709990d79c25c643baf91df11675e94443bb",
   opts = function(_, opts)
     return require("astrocore").extend_tbl(opts, {
       close_if_last_window = true,
@@ -29,7 +30,10 @@ return {
       },
       filesystem = {
         -- hijack_netrw_behavior = "open_default",
-        -- bind_to_cwd = false,
+        bind_to_cwd = false,
+        follow_current_file = {
+          enabled = true,
+        },
         filtered_items = {
           always_show = { ".github", ".gitignore" },
           hide_dotfiles = false,
