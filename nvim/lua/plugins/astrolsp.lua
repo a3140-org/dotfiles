@@ -4,7 +4,7 @@ return {
   opts = {
     features = {
       -- Configuration table of features provided by AstroLSP
-      autoformat = false, -- enable or disable auto formatting on start
+      autoformat = true, -- enable or disable auto formatting on start
       codelens = true, -- enable/disable codelens refresh on start
       lsp_handlers = true, -- enable/disable setting of lsp_handlers
       semantic_tokens = true, -- enable/disable semantic token highlighting

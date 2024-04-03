@@ -6,20 +6,9 @@ return {
   ---@type AstroCoreOpts
   opts = function(_, opts)
     local options = require("astrocore").extend_tbl(opts, {
+      -- Configure project root detection, check status with `:AstroRootInfo`
       diagnostics = {
         underline = true,
-        virtual_text = {
-          spacing = 5,
-          severity_limit = "WARN",
-          severity = {
-            min = vim.diagnostic.severity.WARN,
-          },
-        },
-        signs = {
-          severity = {
-            min = vim.diagnostic.severity.WARN,
-          },
-        },
         update_in_insert = false,
       },
       -- modify core features of AstroNvim

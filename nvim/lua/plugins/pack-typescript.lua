@@ -17,8 +17,12 @@ return {
           },
         },
       },
+      handlers = {
+        tsserver = false,
+      },
       config = {
         ["typescript-tools"] = { -- enable inlay hints by default for `typescript-tools`
+          -- on_attach = function(client, bufnr) client.server_capabilities.semanticTokensProvider = false end,
           filetypes = {
             "javascript",
             "javascriptreact",
@@ -26,12 +30,13 @@ return {
             "typescript",
             "typescriptreact",
             "typescript.tsx",
+            -- "vue",
           },
           settings = {
             separate_diagnostic_server = true,
             complete_function_calls = true,
             tsserver_max_memory = "auto",
-            code_lens = "all",
+            code_lens = "off",
             tsserver_file_preferences = {
               includeInlayParameterNameHints = "all",
               includeInlayParameterNameHintsWhenArgumentMatchesName = false,
@@ -49,8 +54,8 @@ return {
               allowRenameOfImportPath = false,
             },
             tsserver_plugins = {
-              "@vue/typescript-plugin",
               "@styled/typescript-styled-plugin",
+              -- "@vue/typescript-plugin",
             },
             expose_as_code_action = "all",
             jsx_close_tag = {
@@ -125,7 +130,6 @@ return {
       "nvim-lua/plenary.nvim",
       "neovim/nvim-lspconfig",
     },
-    enabled = not require("utils").is_vue_project(),
     -- get AstroLSP provided options like `on_attach` and `capabilities`
     opts = function() return require("astrolsp").lsp_opts "typescript-tools" end,
   },
@@ -134,6 +138,7 @@ return {
     cmd = { "TSC" },
     opts = {},
   },
+  { "dmmulroy/ts-error-translator.nvim", opts = {}, ft = { "typescript", "vue" } },
   {
     "mfussenegger/nvim-dap",
     optional = true,

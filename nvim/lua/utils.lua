@@ -51,7 +51,7 @@ function M.is_vue_project()
   end
 
   -- Check if the key exists in the JSON object
-  if json and json.dependencies and json.dependencies.vue then
+  if json and json.dependencies and json.dependencies.vue or json.devDependencies and json.devDependencies.vue then
     return true
   else
     return false
