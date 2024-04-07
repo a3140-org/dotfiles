@@ -66,5 +66,11 @@ alias ls="colorls"
 # pretty neovim | only for focused mode
 alias n="neovide"
 
-# fzf opens with nvim
-alias f='nvim "$(fzf)"'
+# uses the httpie from 'httpie.io'
+get-pi() {
+  http $(grep -i get $1)
+}
+
+post-pi() {
+  http $(cat $1)
+}
