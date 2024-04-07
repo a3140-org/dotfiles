@@ -1,33 +1,61 @@
-#!/bin/bash
+# Pre install requirements | use apt and/or snap
+# sudo snap install --beta nvim --classic
+# sudo apt install zsh tmux ruby-dev
+# kitty | wezterm | alacritty | or default term
+# sudo gem install colorls
 
-mv ~/.config/nvim ~/.config/nvim.bak
-mv ~/.local/share/nvim ~/.local/share/nvim.bak
-mv ~/.local/state/nvim ~/.local/state/nvim.bak
-mv ~/.cache/nvim ~/.cache/nvim.bak
+# add neovim config
+# backup nvim 
+# mv ~/.config/nvim ~/.config/nvim.bak
+# mv ~/.local/share/nvim ~/.local/share/nvim.bak
+# mv ~/.local/state/nvim ~/.local/state/nvim.bak
+# mv ~/.cache/nvim ~/.cache/nvim.bak
+#
+# copy nvim
+# cp -r ./nvim ~/.config/nvim
 
-# clone code
-git clone https://github.com/chaozwn/astronvim_with_coc_or_mason ~/.config/nvim
+# add tpm and copy tmux conf
+# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# cp ./tmux.conf ~/.tmux.conf
 
-brew install fzf
-brew install luarocks
-brew install lazygit
-brew install ripgrep
-npm install -g tree-sitter-cli
-brew install gdu
-brew install bottom
-brew install protobuf
+# add zsh
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# mv ~/.zshrc ~/.zshrc.bak
+# cp ./zshrc ~/.zshrc
 
-pip install git+https://github.com/will8211/unimatrix.git
-npm install -g neovim
-pip install pynvim
+# install autosuggestions
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-brew tap daipeihust/tap
-brew install im-select
+# add git-acc | change git ssh fast
+# cp ./.git-acc ~/.git-acc
+# touch ~/.gitacc
 
-npm i -g @styled/typescript-styled-plugin typescript-styled-plugin
+# add p10k
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
+# echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 
-npm i -g @vue/typescript-plugin
-npm i -g vue-component-meta
+# add go | my zshrc alr have the goenv paths 
+# git clone https://github.com/go-nv/goenv.git ~/.goenv
+# goenv install 1.22
 
-brew install neovide
-brew install lazydocker
+# add pyenv
+# curl https://pyenv.run | bash
+
+
+# add nvm
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+# run source manually
+# source ~/.zshrc
+
+# on tmux
+# tmux source ~/.tmux.conf
+
+# add lazygit | ubuntu
+# LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+# curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+# tar xf lazygit.tar.gz lazygit
+# sudo install lazygit /usr/local/bin
+
+
+# go install github.com/jesseduffield/lazydocker@latest
